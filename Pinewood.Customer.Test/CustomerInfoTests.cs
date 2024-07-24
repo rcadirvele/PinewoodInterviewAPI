@@ -2,8 +2,6 @@
 using Pinewood.Customer.Application.Core.Models;
 using Pinewood.Customer.Application.Core.Services;
 using Pinewood.Customer.Application.Core.DTOs;
-using AutoMapper;
-using Serilog;
 
 namespace Pinewood.Customer.Test;
 
@@ -86,6 +84,7 @@ public class Tests
         _customerReposMock.Setup(r => r.GetCustomerById(customerId)).ReturnsAsync((CustomerInfoModel)null);
 
         var ex = Assert.ThrowsAsync<Exception>(() => _customerInfoService.DeleteCustomer(customerId));
+
         Assert.That(ex.Message, Is.EqualTo("DeleteCustomer - Customer does not exists"));
         _loggerMock.Verify(l => l.Warning(It.IsAny<string>()), Times.Once);
         _customerReposMock.Verify(r => r.DeleteCustomer(It.IsAny<Guid>()), Times.Never);
@@ -102,24 +101,21 @@ public class Tests
         _customerReposMock.Setup(r => r.DeleteCustomer(customerId)).ThrowsAsync(new Exception(dbError));
 
         var ex = Assert.ThrowsAsync<Exception>(() => _customerInfoService.DeleteCustomer(customerId));
+
         Assert.That(ex.Message, Is.EqualTo(dbError));
-        //_loggerMock.Verify(l => l.Error(It.IsAny<string>()), Times.Once);
     }
 
     [Test]
     public async Task UpdateCustomer_CustomerExists_Test()
     {
-        // Arrange
         var existingCustomer = new CustomerInfoModel { Id = _customerInfoDto.Id };
         var updatedCustomer = new CustomerInfoModel { Id = _customerInfoDto.Id, FirstName = "Ram", LastName = "Cadirvele" };
 
         _customerReposMock.Setup(r => r.GetCustomerById(_customerInfoDto.Id)).ReturnsAsync(existingCustomer);
         _autoMapperMock.Setup(m => m.Map<CustomerInfoModel>(_customerInfoDto)).Returns(updatedCustomer);
 
-        // Act
         var result = await _customerInfoService.UpdateCustomer(_customerInfoDto);
 
-        // Assert
         Assert.AreEqual(_customerInfoDto, result);
     }
 
@@ -135,6 +131,7 @@ public class Tests
         _customerReposMock.Setup(r => r.SaveCustomer(updatedCustomer)).ThrowsAsync(new Exception(dbError));
 
         var ex = Assert.ThrowsAsync<Exception>(() => _customerInfoService.UpdateCustomer(_customerInfoDto));
+
         Assert.AreEqual(dbError, ex.Message);
     }
 
@@ -145,6 +142,7 @@ public class Tests
         _customerReposMock.Setup(r => r.GetAllCustomers()).ThrowsAsync(new Exception(dbError));
 
         var ex = Assert.ThrowsAsync<Exception>(() => _customerInfoService.GetAllCustomers());
+
         Assert.AreEqual(dbError, ex.Message);
     }
 
