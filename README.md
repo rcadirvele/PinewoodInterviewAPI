@@ -1,6 +1,6 @@
 ## PinewoodInterview - Basic Cutomer Info. Portal - .Net Core 8.0 API & Mud Blazor UI.
 
-## --------***Run Locally***-------
+## ----------***Run Locally***------------
 
 **Step 1 - Database Setup**
 - AWS Login URI - [Click](https://eu-north-1.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=-m26WQEkVqwsCg763QAYC_Z6rt9OUnppe0_lYUnlgck&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26oauthStart%3D1721843669849%26src%3Dheader-signin%26state%3DhashArgsFromTB_eu-north-1_d5317d597a5dba4e)
@@ -23,20 +23,20 @@
     Default region name [None]: eu-west-2
  
  
-**Step 2 - Clone download respos from gitOpen Pinewood.Customer.API.sln, then Build and Run the API.**
+**Step 2 - Clone/download *[API Respos](https://github.com/rcadirvele/PinewoodInterviewAPI.git)* and Open Pinewood.Customer.API.sln, then Build and Run the API.**
 
 - API Swagger URI - https://localhost:20909/swagger/index.html
     
     ***Note:*** I have included the above URI as a BaseAddress in Blazor Web app.
 
 
-**Step 3 - Open Pinewood.CustomerInfo.BlazorWasmUI.sln, then Build and Run the Blazor UI.**
+**Step 3 - Clone/download *[UI Respos](https://github.com/rcadirvele/PinewoodInterviewUI.git)* and Open Pinewood.CustomerInfo.BlazorWasmUI.sln, then Build and Run the Blazor UI.**
 - Blazor URI - https://localhost:7167
 
     ***Note:*** I have included above URI in API CORS.
 
 
-## --------***Tech Stack***-------
+## -----------***Tech Stack***---------------
 ### Architecture/Approach -
 
 As software design approrach, followed ***Clean Architecture*** - 
