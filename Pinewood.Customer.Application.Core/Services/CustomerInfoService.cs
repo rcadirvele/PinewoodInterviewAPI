@@ -51,6 +51,7 @@ namespace Pinewood.Customer.Application.Core.Services
                 var customer = await _customerInfoRepos.GetCustomerById(id);
                 if(customer is null) {
                     _logger.Warning($"DeleteCustomer - Customer does not exists");
+                    throw new Exception("DeleteCustomer - Customer does not exists");
                 }
 
                 await _customerInfoRepos.DeleteCustomer(id);
