@@ -1,6 +1,6 @@
-# PinewoodInterviewAPI
+## PinewoodInterviewAPI - .Net 8 Web API.
 
-## Run Locally
+### Run/Setup Locally
 
 **Step 1 - Database Setup**
   
@@ -23,7 +23,7 @@
     Default region name: eu-west-2
  
  
-**Step 2 - Clone/download below API respos from git Open Pinewood.Customer.API.sln, then Build and Run the API.**
+**Step 2 - Clone/download below API respos from git and Open Pinewood.Customer.API.sln, then Build and Run the API.**
 - respos - https://github.com/rcadirvele/PinewoodInterviewAPI.git
 - API Swagger URI - https://localhost:20909/swagger/index.html
     
