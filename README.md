@@ -1,4 +1,4 @@
-## PinewoodInterview - Basic Cutomer Details .Net Core 8.0 API & Mud Blazor UI.
+## PinewoodInterview - Basic Cutomer Info. Portal - .Net Core 8.0 API & Mud Blazor UI.
 
 ## --------***Run Locally***-------
 
