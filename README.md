@@ -1,5 +1,9 @@
 ### PinewoodInterview - Basic Cutomer Info. Portal - .Net Core 8.0 API & Mud Blazor UI.
 
+Thanks for the opportunity.
+
+Below shared the steps for Local setup, Architecture and Technology/packages used. Please take a look and let me know if any suggestions,
+
 ## ----------***Run Locally***------------
 
 **Step 1 - Database Setup**
